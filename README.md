@@ -19,14 +19,14 @@ Portora is a modern portfolio builder that empowers users to showcase their proj
 
 ## 🛠 Tech Stack
 
-- ⚛️ [React](https://reactjs.org/)
-- 💨 [Tailwind CSS](https://tailwindcss.com/)
-- 🌐 [Axios](https://axios-http.com/) — for API requests
-- 🔐 [JWT Auth](https://jwt.io/)
-- 💅 [shadcn/ui](https://ui.shadcn.com/) — for sleek, accessible components
-- 📁 [Cloudinary](https://cloudinary.com/) — for image uploads
-- 🧭 [React Router](https://reactrouter.com/) — for navigation
-- 🔎 [React Hook Form](https://react-hook-form.com/) — for forms & validation
+- ⚛️ [React]
+- 💨 [Tailwind CSS]
+- 🌐 [Axios] — for API requests
+- 🔐 [JWT Auth]
+- 💅 [shadcn/ui] — for sleek, accessible components
+- 📁 [Cloudinary] — for image uploads
+- 🧭 [React Router] — for navigation
+- 🔎 [React Hook Form] — for forms & validation
 
 ---
 
@@ -35,8 +35,8 @@ Portora is a modern portfolio builder that empowers users to showcase their proj
 1. **Clone the repo:**
 
 ```bash
-git clone https://github.com/your-username/portora-frontend.git
-cd portora-frontend
+git clone https:[https://github.com/4ssh1/portora.git]
+cd portora
 ```
 
 2. **Install dependencies:**
@@ -48,7 +48,7 @@ npm install
 3. **Configure environment variables:**
 
 ```bash
-VITE_API_BASE_URL=http://localhost:5000/api
+VITE_API_BASE_URL=http://base_url/api
 VITE_CLOUDINARY_UPLOAD_PRESET=your_preset
 VITE_CLOUDINARY_CLOUD_NAME=your_cloud_name
 ```
@@ -74,7 +74,7 @@ src/
 This frontend is powered by a custom-built backend (Node.js + Express). Features like auth, uploads, and view tracking rely on the backend.
 
 📘 API Docs available at:
-http://localhost:5000/api-docs
+will be provided when security is added to the API
 
 Make sure the backend is running and accessible at the URL specified in .env.
 

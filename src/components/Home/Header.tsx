@@ -24,15 +24,15 @@ function Header() {
 ]
 
   return (
-      <div className="w-full">
+      <div className="w-full h-[90px] border-[1px] backdrop-blur-xs">
         <div className="flex mx-auto w-[95%] justify-center pt-7 gap-5 ">
           <div className="inline-flex justify-between items-center w-2/3">
             <div className="flex gap-14 items-center">
               <p className="nunito font-bold text-[22px] flex items-center gap-1">
                 <span className="border-[2px] rounded-full border-[#006647]">{logo}</span>Portora</p>
               <p className="nunito">Explore</p>
-              <div className="relative border-[1px] border-slate-500 rounded-[30px] w-[513px] h-[48px] p-4 flex items-center">
-                  <input type="text" name="search" id="search" className="text-[#1A1A1A] text-[16px] font-medium pl-10"
+              <div className="relative border-[1px] border-slate-500 rounded-[30px] w-[433px] h-[38px] pl-2 flex items-center">
+                  <input type="text" name="search" id="search" className="text-[#1A1A1A] text-[14px] font-medium pl-10"
                   placeholder="Search Creatives work..."/>
                   <IoIosSearch className="absolute left-4 "/>
               </div>
@@ -41,8 +41,8 @@ function Header() {
           <div className="flex justify-between items-center w-1/3 pl-4">
             <div className="flex gap-8 items-center">
               {bellIcon}
-              {buttonsProp.map(props=>(
-                <Button {...props}/>
+              {buttonsProp.map((props, ind)=>(
+                <Button {...props} key={ind}/>
               ))}
             </div>
           </div>

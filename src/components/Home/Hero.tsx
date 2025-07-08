@@ -1,6 +1,7 @@
 import type { MergedButtonProps } from "@/types/type"
 import { useNavigate } from "react-router-dom"
 import Button from "../Button"
+import SvgImage from "./SvgImage"
 
 function Hero() {
      const navigate = useNavigate()
@@ -21,14 +22,14 @@ function Hero() {
     ]
 
   return (
-    <div className="flex py-10 bg-[#eaf8f369]">
-      <div className="flex flex-col gap-8 justify-center w-1/2 items-center pl-6">
+    <div className="flex py-10 bg-[#d8f3ea] justify-between">
+      <div className="flex flex-col gap-8 justify-center w-1/2 items-center">
           <div>
               <div>
                 <p className="text-[14px] exo font-bold">Get Hired Fast</p>
                 <h1 className="text-[40px] exo font-bold max-w-96 leading-13">
                     <span className="text-[#00A991]">Showcase</span> Your Creativity, Get Discovered!</h1>
-                <p className="text-lg pt-3">Upload your portfolio, share your work, and connect with other creatives.</p>
+                <p className="text-[16px] pt-3">Upload your portfolio, share your work, and connect with other creatives.</p>
               </div>
               <div className="flex gap-4 pt-8">
                 {buttonsProp.map((prop, index)=>(
@@ -37,8 +38,8 @@ function Hero() {
               </div>
           </div>
       </div>
-      <div>
-
+      <div className="w-1/2 pr-10">
+        <SvgImage />
       </div>
     </div>
   )

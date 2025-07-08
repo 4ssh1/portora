@@ -1,22 +1,43 @@
-import { useState } from "react";
-
+import { useEffect, useState } from "react";
+import hero1 from '../../assets/images/hero1.svg'
+import hero2 from '../../assets/images/hero2.svg'
 
 function SvgImage() {
-    const [isToggled, setIsToggled] = useState(false);
+    const [index, setIndex] = useState<number>(0)
+    const [animate, setAnimate] = useState<boolean>(false)
+    const arr: string[] = [hero1, hero2]
+    
+    useEffect(()=>{
+      const interval = setInterval(() => {
+        setAnimate(true)
+        setIndex((prevIndex) => (prevIndex + 1) % arr.length);
+      }, 5000)
+      return () => clearInterval(interval)
+    }, [])
 
+    useEffect(()=>{
+      if (!animate) return
+      const timeout = setTimeout(() => setAnimate(false), 100)
+      return () => clearTimeout(timeout)
+    }, [animate])
+    
+    const image = arr[index]
   return (
-    <div className="relative w-24 h-24 cursor-pointer" onClick={() => setIsToggled(!isToggled)}>
-        <div className={`absolute inset-0 transition-all duration-300 ease-in-out
-            ${isToggled ? "opacity-0 scale-0" : "opacity-100 scale-100"}`}>
-            {/* Image 1 */}
-        </div>
-        <div className={`absolute inset-0 transition-all duration-300 ease-in-out 
-            ${isToggled ? "opacity-100 scale-100" : "opacity-0 scale-0"}`}>
-            {/* Image 2 */}
-        </div>
-    </div>
-  )
-}
+      <div className={`transition-all w-full h-full duration-1000 ease-in-out relative
+        ${image ? "" : "bg-slate-300 animate-pulse rounded-full shadow-lg"}`}>
+          {image && ( 
+            <div className=" absolute w-full h-full shadow-lg rounded-full bg-gradient-to-r
+              from-[#00A991] via-[#eaf8f3ce] to-[#006647] drop-shadow-[0_10px_15px_rgba(0,0,0,0.3)]">
+              <img alt="hero-image" loading="lazy" src={image}
+              className= {`object-contain w-full h-full shadow-lg rounded-full bg-gradient-to-r
+              from-[#00A991] via-[#eaf8f3ce] to-[#006647] drop-shadow-[0_10px_15px_rgba(0,0,0,0.3)]
+              transition duration-100 ease-in-out slide-in
+            ${animate ? "opacity-0 translate-y-5" : "opacity-100 translate-y-0"}`}
+              />
+            </div>
+          )}
+      </div>
+  )}
 
 export default SvgImage
 

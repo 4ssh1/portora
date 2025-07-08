@@ -6,7 +6,7 @@ import type { MergedButtonProps } from "@/types/type";
 
 function Header() {
   const navigate = useNavigate()
-  const logo = <img src="/logo-p.png" alt="logo" className="size-5" />
+  const logo = <img src="/logo-p.png" loading="lazy" alt="logo" className="size-5" width={'20px'} height={'20px'}/>
   const bellIcon = <FaRegBell />
   const buttonsProp:MergedButtonProps[]  = [
     {
@@ -25,7 +25,7 @@ function Header() {
 
   return (
       <div className="w-full h-[90px] border-[1px] backdrop-blur-xs">
-        <div className="flex mx-auto w-[95%] justify-center pt-7 gap-5 ">
+        <div className="flex mx-auto w-[95%] justify-center pt-7 gap-5">
           <div className="inline-flex justify-between items-center w-2/3">
             <div className="flex gap-14 items-center">
               <p className="nunito font-bold text-[22px] flex items-center gap-1">

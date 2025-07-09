@@ -1,9 +1,9 @@
-import HomePage from "../pages/HomePage"
-import type { RouteObject } from "react-router-dom";
+import LandingPage from "../pages/LandingPage";
+  import type { RouteObject } from "react-router-dom";
 
 export const EntryRoute:RouteObject[] = [
         {
-          element: <HomePage />,
+          element: <LandingPage />,
           path: '/'
         },
     ]

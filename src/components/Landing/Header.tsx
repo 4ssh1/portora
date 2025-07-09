@@ -32,7 +32,7 @@ function Header() {
                 <span className="border-[2px] rounded-full border-[#006647] text-[9px] md:text-sm">{logo}</span>Portora</p>
               <p className="nunito text-[10px] md:text-[15px]">Explore</p>
               <div className="relative border-[1px] border-slate-500 rounded-[30px] md:w-[433px] w-[120px] h-[20px] md:h-[38px] pl-2 flex items-center">
-                  <input type="text" name="search" id="search" className="text-[#1A1A1A] md:text-[14px] text-[7px] font-medium pl-5 md:pl-10"
+                  <input type="text" name="search" id="search" className="text-[#1A1A1A] md:text-[14px] text-[7px] font-medium px-5 md:pl-10 outline-none w-full"
                   placeholder="Search Creatives work..."/>
                   <IoIosSearch className="absolute left-2 md:left-4 size-2 md:size-5"/>
               </div>  

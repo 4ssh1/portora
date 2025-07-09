@@ -62,8 +62,8 @@ const badges: badgeType[] = [
 
   return (
     <div ref={scrollRef} className=" bg-slate-300 flex overflow-x-auto items-center justify-center no-scrollbar py-3">
-      {repeatedBadges.map(({ label, icon }) => (
-    <span key={label} className="inline-flex items-center gap-1 transition-all hover:bg-[#00A991] whitespace-nowrap
+      {repeatedBadges.map(({ label, icon }, index) => (
+    <span key={index} className="inline-flex items-center gap-1 transition-all hover:bg-[#00A991] whitespace-nowrap
     ease-in-out rounded-full bg-gray-100 border text-sm text-gray-800 shadow-sm py-2 px-5 justify-between max-w-50">
       {icon} {label}
     </span>

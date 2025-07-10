@@ -24,14 +24,14 @@ function Newsletter() {
         <p className="text-green-600 font-medium">Thanks! You're subscribed.</p>
       ) : (
         <form onSubmit={handleSubmit} className="flex gap-2">
-          <Input
+          <Input className="outline-none"
             type="email"
             placeholder="Enter your email"
             value={email}
             onChange={(e:React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
             required
           />
-          <Button type="submit">Subscribe</Button>
+          <Button type="submit" className="bg-[#00A991]">Subscribe</Button>
         </form>
       )}
     </div>

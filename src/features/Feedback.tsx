@@ -17,22 +17,22 @@ function FeedbackBox() {
   }
 
   return (
-    <div className="bg-muted p-6 rounded-xl max-w-md w-full text-left shadow-sm">
-      <h3 className="text-lg font-semibold mb-1">Send Feedback</h3>
-      <p className="text-sm text-muted-foreground mb-4">Got a suggestion or issue? Let us know.</p>
+    <div className="bg-muted p-6 rounded-xl max-w-sm w-full h-fit text-left shadow-sm">
+      <h3 className="text-[16px] font-semibold mb-1">Send Feedback</h3>
+      <p className="text-[12px] text-muted-foreground mb-4">Got a suggestion or issue? Let us know.</p>
 
       {sent ? (
         <p className="text-green-600 font-medium">Feedback sent. Thanks!</p>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-3">
-          <Textarea
-            rows={3}
+          <Textarea 
+            rows={2}
             placeholder="Type your message..."
             value={message}
             onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setMessage(e.target.value)}
             required
           />
-          <Button type="submit" className="w-full">Send</Button>
+          <Button type="submit" className="w-full bg-[#006647]">Send</Button>
         </form>
       )}
     </div>

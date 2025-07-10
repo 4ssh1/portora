@@ -9,3 +9,11 @@ export interface howInterface {
   description: string;
   image: string;
 }
+
+export interface inputType {
+    type: string;
+    placeholder?: string;
+    className?: string;
+    name?: string;
+    value?: string;
+}

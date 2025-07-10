@@ -18,7 +18,7 @@ function Header() {
     {
       label: "Sign up",
       className: "bg-[#006647] rounded-[10px] w-[40px] md:w-[80px] h-6 text-white text-[8px] md:h-[35px] md:text-sm",
-      onclick: ()=>navigate('/'),
+      onclick: ()=>navigate('/sign-in'),
       variant: "ghost"
     }
 ]

@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { MdOutlineMail } from "react-icons/md";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
+import { FaMedium } from "react-icons/fa6";
 
 function Footer() {
   const [showFeedback, setShowFeedback] = useState(false)
@@ -15,9 +16,10 @@ function Footer() {
   ]
 
   const contactInfo = [
-    { label: "Email", value: <MdOutlineMail />, href: "mailto:sarah@example.com" },
-    { label: "GitHub", value: <FaGithub />, href: "https://github.com/your-username" },
-    { label: "LinkedIn", value: <FaLinkedin />, href: "https://linkedin.com/in/your-name" },
+    { label: "Email", value: <MdOutlineMail className="text-green-400" />, href: "mailto:sarahnzeshi05@gmail.com" },
+    { label: "GitHub", value: <FaGithub className="text-black"/>, href: "https://github.com/4ssh1" },
+    { label: "LinkedIn", value: <FaLinkedin className="text-blue-500"/>, href: "https://www.linkedin.com/in/sarah-nzeshi-bb39a4268" },
+    { label: "Medium", value: <FaMedium />, href: "https://medium.com/@sarahnzeshi05" },
   ]
 
   return (
@@ -31,7 +33,7 @@ function Footer() {
           <h3 className="text-sm font-semibold mb-4 text-foreground">Contact Us</h3>
           <ul className="space-y-5">
             {contactInfo.map((item) => (
-              <li key={item.label}>
+              <li key={item.label} className="flex items-center gap-2 w-fit">
                 {item.label}:{" "}
                 <a href={item.href} className="underline" target="_blank" rel="noreferrer">
                   {item.value}

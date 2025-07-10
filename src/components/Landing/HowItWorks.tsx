@@ -1,12 +1,18 @@
 import type { howInterface } from "@/interfaces/interface"
 
-export function HowItWorks() {
+function HowItWorks() {
 const howItWorksSteps: howInterface[] = [
   {
     id: 1,
     title: "Create an Account",
     description: "Sign up with your email and set up your profile in minutes.",
     image: "/illustrations/sign-in.svg",
+  },
+  {
+    id: 2,
+    title: "Upload Projects",
+    description: "Showcase your work with descriptions, tags, and images.",
+    image: "/illustrations/upload.svg",
   },
   {
       id: 3,
@@ -20,12 +26,6 @@ const howItWorksSteps: howInterface[] = [
         description: "See who views your work and grow your presence.",
         image: "/illustrations/analytic.svg",
     },
-    {
-      id: 2,
-      title: "Upload Projects",
-      description: "Showcase your work with descriptions, tags, and images.",
-      image: "/illustrations/upload.svg",
-    },
 ]
 
   return (
@@ -38,7 +38,7 @@ const howItWorksSteps: howInterface[] = [
       <div className="grid md:grid-cols-4 gap-8 max-w-6xl mx-auto">
         {howItWorksSteps.map((step, i) => (
           <div key={step.id} className="flex flex-col items-center text-center relative">
-            <img src={step.image} className="w-20 h-20 mb-4" alt={step.title} />
+            <img src={step.image} className="w-20 h-20 my-4" alt={step.title} />
             <h3 className="text-lg font-semibold">{step.title}</h3>
             <p className="text-sm text-muted-foreground mt-2">{step.description}</p>
             {
@@ -57,7 +57,15 @@ const howItWorksSteps: howInterface[] = [
                         strokeWidth="2"
                         fill="none"
                         strokeDasharray="6 6"
+                        strokeDashoffset="20"
                         />
+                         <animate
+                            attributeName="stroke-dashoffset"
+                            values="120;0"
+                            dur="1s"
+                            repeatCount="1"
+                            fill="freeze"
+                          />
                     </svg>     
                 )
             }
@@ -67,3 +75,5 @@ const howItWorksSteps: howInterface[] = [
     </section>
   )
 }
+
+export default HowItWorks

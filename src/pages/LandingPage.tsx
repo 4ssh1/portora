@@ -4,6 +4,7 @@ import Marquee from '@/components/Landing/Marquee'
 import Features from '@/components/Landing/Features'
 import HowItWorks from '@/components/Landing/HowItWorks'
 import Footer  from '@/components/Footer'
+import Sample from '@/components/Landing/Sample'
 
 function LandingPage() {
   return (
@@ -13,6 +14,7 @@ function LandingPage() {
       <Marquee />
       <Features />
       <HowItWorks />
+      <Sample />
       <Footer />
     </div>
   )

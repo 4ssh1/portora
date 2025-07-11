@@ -1,9 +1,9 @@
-import type { badgeType } from "@/types/type";
+import type { BadgeType } from "@/types/type";
 import { Code, PenTool, Server, Bot, Smartphone, Cpu, Database, Globe } from "lucide-react";
 import { useEffect, useRef } from "react";
 
 function Marquee() {
-const badges: badgeType[] = [
+const badges: BadgeType[] = [
   { label: "Frontend", icon: <Code size={14} /> },
   { label: "Backend", icon: <Server size={14} /> },
   { label: "Design", icon: <PenTool size={14} /> },
@@ -24,7 +24,7 @@ const badges: badgeType[] = [
   { label: "and so much more ..."},
 ]
 
- const repeatedBadges:badgeType[] = [...badges, ...badges]
+ const repeatedBadges:BadgeType[] = [...badges, ...badges]
  const scrollRef = useRef<HTMLDivElement>(null)  
  
  useEffect(()=>{

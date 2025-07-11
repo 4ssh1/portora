@@ -1,15 +1,19 @@
-import type { ButtonProps } from "@/interfaces/interface";
+import type { ButtonProps, HowInterface } from "@/interfaces/interface";
 import type { JSX } from "react";
 
-export type MergedButtonProps = ButtonType & ButtonProps;
+export type MergedButtonProps = ButtonType & ButtonProps & BadgeType;
 
 export type ButtonType = {
     label: string;
-    onclick: ()=>void;
+    onclick?: ()=>void;
     className: string;
 }
 
-export type badgeType = {
+export type BadgeType = {
     label: string,
-    icon?: JSX.Element
+    icon?: JSX.Element 
 }
+
+type Icon = Pick<BadgeType, "icon">
+
+export type FeatureBtn = Pick<HowInterface, 'title' | "description"> & Icon

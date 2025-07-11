@@ -1,23 +1,30 @@
+import { IoPersonCircleOutline } from "react-icons/io5";
+import { MdOutlineMail } from "react-icons/md";
+import { MdOutlineRemoveRedEye } from "react-icons/md";
+
 export const inputs =[
         {
             type: "text",
             placeholder: "Enter your firstname",
             className: "text-xs ",
             name: "firstname",
-            value: ""
+            value: "",
+            icon:  <IoPersonCircleOutline />
         },
         {
             type: "text",
             placeholder: "Enter your lastname",
             className: "text-xs ",
             name: "lastname",
-            value: ""
+            icon:  <IoPersonCircleOutline />,
+            value: "",
         },
         {
             type: "email",
             placeholder: "Enter your email",
             className: "text-xs ",
             name: "email",
+            icon: <MdOutlineMail />,
             value: ""
         },
         {
@@ -25,6 +32,7 @@ export const inputs =[
             placeholder: "Enter your password",
             className: "text-xs ",
             name: "password",
+            icon: <MdOutlineRemoveRedEye />,
             value: ""
         },
         {
@@ -32,6 +40,7 @@ export const inputs =[
             placeholder: "Confirm your password",
             className: "text-xs ",
             name: "password",
+            icon: <MdOutlineRemoveRedEye />,
             value: ""
         },
     ]

@@ -1,25 +1,14 @@
-import type { MergedButtonProps } from "@/types/type"
-import { useNavigate } from "react-router-dom"
 import Button from "../Button"
 import SvgImage from "./SvgImage"
+import { heroButtons } from "@/consts/button"
+import { useNavigate } from "react-router-dom"
 
 function Hero() {
-     const navigate = useNavigate()
-     const buttonsProp:MergedButtonProps[]  = [
-        {
-          label: "Explore Portfolios",
-          className: `border-[#00A991] rounded-[10px] w-[140px] 
-          hover:bg-[#00A991] hover:text-white transition-all duration-300 ease-in-out `,
-          onclick: ()=>navigate('/'),
-          variant: "ghost"
-        },
-        {
-          label: "Showcase Your Work",
-          className: "bg-[#00A991] rounded-[10px] w-[160px] text-white ease-in-out transition-all duration-300",
-          onclick: ()=>navigate('/'),
-          variant: "ghost"
-        }
-    ]
+  const navigate = useNavigate()
+  const btnOnclick: (()=>void)[] = [
+    ()=>navigate('/'),
+    ()=>navigate('/'),
+  ]
 
   return (
     <div className="flex py-10 bg-[#d8f3ea] justify-between">
@@ -32,8 +21,8 @@ function Hero() {
                 <p className="text-[10px] md:text-[16px] pt-3">Upload your portfolio, share your work, and connect with other creatives.</p>
               </div>
               <div className="flex gap-4 pt-8">
-                {buttonsProp.map((prop, index)=>(
-                    <Button {...prop} key={index}/>
+                {heroButtons.map((prop, index)=>(
+                    <Button {...prop} key={index} onclick={btnOnclick[index]}/>
                 ))}
               </div>
           </div>

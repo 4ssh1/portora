@@ -1,27 +1,17 @@
 import { FaRegBell } from "react-icons/fa";
 import { IoIosSearch } from "react-icons/io";
-import { useNavigate } from "react-router-dom";
 import Button from "../Button";
-import type { MergedButtonProps } from "@/types/type";
+import { buttonsProp } from "@/consts/button";
+import { useNavigate } from "react-router-dom";
+import { logo } from "@/consts/logo";
 
 function Header() {
   const navigate = useNavigate()
-  const logo = <img src="/logo-p.png" loading="lazy" alt="logo" className="size-2 md:size-5"/>
   const bellIcon = <FaRegBell className="size-2 md:size-5"/>
-  const buttonsProp:MergedButtonProps[]  = [
-    {
-      label: "Log in",
-      className: `border-[#006647] rounded-[10px] w-[35px] text-[8px] md:h-[35px] h-6 md:text-sm md:w-[70px] hover:bg-[#006647] hover:text-white`,
-      onclick: ()=>navigate('/'),
-      variant: "ghost"
-    },
-    {
-      label: "Sign up",
-      className: "bg-[#006647] rounded-[10px] w-[40px] md:w-[80px] h-6 text-white text-[8px] md:h-[35px] md:text-sm",
-      onclick: ()=>navigate('/sign-in'),
-      variant: "ghost"
-    }
-]
+  const btnOnclick: (() => void)[] = [
+    () => navigate('/'),
+    () => navigate('/sign-in'),
+  ]
 
   return (
       <div className="w-full h-[45px] md:h-[90px] border-[1px] backdrop-blur-xs">
@@ -42,7 +32,7 @@ function Header() {
             <div className="flex gap-2 md:gap-8 items-center">
               {bellIcon}
               {buttonsProp.map((props, ind)=>(
-                <Button {...props} key={ind}/>
+                <Button {...props} key={ind} onclick={btnOnclick[ind]}/>
               ))}
             </div>
           </div>

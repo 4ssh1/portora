@@ -1,7 +1,7 @@
-import type { howInterface } from "@/interfaces/interface"
+import type { HowInterface } from "@/interfaces/interface"
 
 function HowItWorks() {
-const howItWorksSteps: howInterface[] = [
+const howItWorksSteps: HowInterface[] = [
   {
     id: 1,
     title: "Create an Account",

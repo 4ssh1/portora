@@ -9,7 +9,7 @@ function Header() {
   const navigate = useNavigate()
   const bellIcon = <FaRegBell className="size-2 md:size-5"/>
   const btnOnclick: (() => void)[] = [
-    () => navigate('/'),
+    () => navigate('/log-in'),
     () => navigate('/sign-in'),
   ]
 
